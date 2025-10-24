@@ -16,6 +16,34 @@ Este projeto permite que você pegue entidades de polilinhas de um arquivo DXF (
 - Python 3.x  
 - Dependências listadas em `requirements.txt` (por exemplo: ezdxf, pillow, numpy — adapte conforme seu environment)  
 
+## 🧩 Requisitos para o arquivo DXF
+Para que a conversão funcione corretamente, o arquivo DXF deve seguir as regras abaixo:
+
+### 🔹 Estrutura e Layers
+- Todos os objetos a serem convertidos devem estar na **layer `PERFIS`**.  
+- Cada objeto (perfil) deve estar **consideravelmente separado dos demais**, para que o recorte automático consiga identificar os limites de cada figura sem sobreposição.  
+  - Não é necessário um espaçamento ENORME, apenas o suficiente para evitar contato entre bordas.  
+
+### 🔹 Nomes e Cotas
+- O **nome do perfil** deve estar em **formato `SIMPLETEXT`**, posicionado **dentro do objeto** ou **muito próximo** dele.  
+  - Isso garante que o nome seja incluído dentro do recorte gerado.  
+- As **cotas** só são detectadas se forem algum tipo de **entidade `DIM` (Dimension)**.  
+  - Outras entidades de texto ou anotação não são consideradas neste momento.  
+
+### 🔹 Tipos de Entidades Suportadas
+- O conversor trabalha apenas com **entidades vetoriais simples** (`LWPOLYLINE`, `POLYLINE`).  
+- **Curvas** (`ARC`, `SPLINE`, `ELLIPSE`) ainda não são suportadas e terão o preenchimento ignorado.  
+
+> ⚠️ **Importante:** Se os nomes, cotas e objetos estiverem distantes ou em layers diferentes, o aplicativo pode gerar imagens incompletas ou ignorar elementos.
+
+> ⚠️ Caso as regras acima não sejam seguidas, o aplicativo pode ignorar certos elementos ou gerar recortes incorretos.
+
+
+### ⚠️ Limitações Conhecidas
+- Curvas (arcos, splines e elipses) ainda não são processadas.
+- Apenas polilinhas são renderizadas corretamente.
+
+
 ### Instalação  
 ```bash
 git clone https://github.com/nicolas-aires-dev/DxfToFiguresnIcons.git  
@@ -49,6 +77,14 @@ python main.py --input arquivo.dxf --output pasta_saida --scale 2.0 --line_color
 │  .gitignore
 └─ input/             # (opcional) arquivos DXF de exemplo
 └─ output/            # (opcional) resultados de imagens geradas
+```
+
+## 🧪 Arquivo de Teste
+O repositório já inclui um exemplo em `/input/ProfilesExample.dxf` para facilitar os testes.  
+Basta abrir este arquivo na interface gráfica (`Tool_GUI.py`) ou usar via linha de comando:  
+
+```bash
+python main.py --input ./input/ProfilesExample.dxf--output ./output
 ```
 
 ## ⚠️ Limitações Conhecidas
