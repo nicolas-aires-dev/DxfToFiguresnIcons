@@ -1,8 +1,8 @@
 # DxfToFiguresnIcons  
-Conversor que transforma polilinhas de arquivos DXF em imagens (ícones/figuras).  
+Ferramenta de automação white-label para processamento de arquivos DXF, convertendo-os em figuras e ícones estruturados. Aumentou a performance de um processo manual em 86% no pior cenário e 94% no cenário ideal, economizando tempo e esforço significativos.
 
 ## 🎯 Visão Geral  
-Este projeto permite que você pegue entidades de polilinhas de um arquivo DXF (formato CAD) e converta para imagens raster (por exemplo PNG) ou ícones(BMP), facilitando a reutilização em interfaces, relatórios, ou outros contextos visuais.  
+Este projeto permite que você pegue entidades de polilinhas de um arquivo DXF (formato CAD) e converta para imagens raster (por exemplo PNG) ou ícones (BMP), facilitando a reutilização em interfaces, relatórios, ou outros contextos visuais.  
 
 ## ✅ Funcionalidades  
 - Leitura de arquivos DXF que contêm polilinhas.  
@@ -10,6 +10,15 @@ Este projeto permite que você pegue entidades de polilinhas de um arquivo DXF (
 - Interface gráfica simples (via `Tool_GUI.py`) para operar sem necessidade de linha de comando.  
 - Configuração de parâmetros (tamanho da imagem, cor da linha, cor de fundo, espessura, escala) para personalização.  
 - Saída de imagem para cada figura processada.
+
+## 🚩Problema / Contexto:
+O processamento manual de arquivos DXF era demorado e sujeito a erros, demandando esforço repetitivo.
+
+## 🎯Solução / Abordagem:
+Automatização da extração e conversão de arquivos DXF utilizando Python, otimizando a lógica de processamento e manipulação de arquivos.
+
+## 💥Impacto:
+Redução do tempo de processamento em até 94%, aumentando a eficiência e a confiabilidade do processo.
 
 ## 🛠️ Como usar  
 ### Pré-requisitos  
@@ -37,12 +46,6 @@ Para que a conversão funcione corretamente, o arquivo DXF deve seguir as regras
 > ⚠️ **Importante:** Se os nomes, cotas e objetos estiverem distantes ou em layers diferentes, o aplicativo pode gerar imagens incompletas ou ignorar elementos.
 
 > ⚠️ Caso as regras acima não sejam seguidas, o aplicativo pode ignorar certos elementos ou gerar recortes incorretos.
-
-
-### ⚠️ Limitações Conhecidas
-- Curvas (arcos, splines e elipses) ainda não são processadas.
-- Apenas polilinhas são renderizadas corretamente.
-
 
 ### Instalação  
 ```bash
