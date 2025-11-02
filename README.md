@@ -4,6 +4,10 @@ Ferramenta de automação white-label para processamento de arquivos DXF, conver
 ## 🎯 Visão Geral  
 Este projeto permite que você pegue entidades de polilinhas de um arquivo DXF (formato CAD) e converta para imagens raster (por exemplo PNG) ou ícones (BMP), facilitando a reutilização em interfaces, relatórios, ou outros contextos visuais.  
 
+  <img width="1254" height="609" alt="image" src="https://github.com/user-attachments/assets/32b7f9ff-c8bb-42a1-a8fa-1d8d99a0c464" />
+
+  <img width="1124" height="717" alt="image" src="https://github.com/user-attachments/assets/f91034d0-d498-491f-b4a6-14eb8d3d1ca0" />
+
 ## ✅ Funcionalidades  
 - Leitura de arquivos DXF que contêm polilinhas.  
 - Conversão das polilinhas em imagem (PNG) com fundo transparente ou definido.  
@@ -23,7 +27,7 @@ Redução do tempo de processamento em até 94%, aumentando a eficiência e a co
 ## 🛠️ Como usar  
 ### Pré-requisitos  
 - Python 3.x  
-- Dependências listadas em `requirements.txt` (por exemplo: ezdxf, pillow, numpy — adapte conforme seu environment)  
+- Dependências listadas em `requirements.txt` (por exemplo: ezdxf, pillow, numpy — adapte conforme seu environment)
 
 ## 🧩 Requisitos para o arquivo DXF
 Para que a conversão funcione corretamente, o arquivo DXF deve seguir as regras abaixo:
